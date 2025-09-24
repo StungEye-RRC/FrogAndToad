@@ -15,6 +15,8 @@ namespace FrogToad {
 
         static bool applyCommand(FrogToad::Model& m, char key) {
             if (key == 'r' || key == 'R') { m.reset(); return true; }
+            // Subtracting '1' from the key to convert from 
+            // the ASCII char value to the integer equivalent.
             return m.tryMove(key - '1');
         }
     };

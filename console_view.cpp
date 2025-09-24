@@ -11,7 +11,7 @@ namespace FrogToad {
 		for (int i{ 0 }; i < m.BoardSize; ++i) {
 			std::cout << (i + 1);
 		}
-		std::cout << "   (1..7 move; R restart)\n";
+		std::cout << "   (1.." << m.BoardSize << " move; R restart)\n";
 
 		if (m.isSolved()) {
 			std::cout << "Solved! Press R to restart.\n";

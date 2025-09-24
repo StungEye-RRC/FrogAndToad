@@ -23,11 +23,11 @@ namespace FrogToad {
 		// Board row 
 		for (int i = 0; i < m.BoardSize; ++i) {
 			const auto c = m.cellAt(i);
-			const auto piece{ FrogToad::Model::toChar(c) };
-			if (c == FrogToad::Model::Cell::L) {
+			const auto piece{ Model::toChar(c) };
+			if (c == Model::Cell::L) {
 				std::cout << blue();
 			}
-			else if (c == FrogToad::Model::Cell::R) {
+			else if (c == Model::Cell::R) {
 				std::cout << red();
 			}
 			else {

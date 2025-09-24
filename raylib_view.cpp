@@ -1,5 +1,4 @@
 #include "raylib_view.hpp"
-#include <string>
 
 namespace FrogToad {
 	void RaylibView::draw(const FrogToad::Model& m) {

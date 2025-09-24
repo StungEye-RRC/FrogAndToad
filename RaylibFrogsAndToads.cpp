@@ -10,7 +10,6 @@
 	#include "raylib_view.hpp"
 #else
 	#include <iostream>
-	#include <conio.h>
 	#include "console_controller.hpp"
 	#include "console_view.hpp"
 	#include "ansi_view.hpp"
@@ -29,7 +28,7 @@ int main() {
         ctrl.step(model);
         std::cout << "\n";
     }
-    std::cout << "Goodbye!\n";
+
     return 0;
 }
 #else

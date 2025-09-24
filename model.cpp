@@ -18,6 +18,8 @@ namespace FrogToad {
     }
 
     char Model::toChar(Cell c) {
+        // Converts Cell enums to Text using nested ternary
+        // E => '.', L => 'T', R => 'F'
         return c == Cell::E ? '.' : (c == Cell::L ? 'T' : 'F');
     }
 
