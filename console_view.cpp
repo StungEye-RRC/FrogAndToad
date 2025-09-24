@@ -3,12 +3,12 @@
 
 namespace FrogToad {
 	void ConsoleView::draw(const FrogToad::Model& m) {
-		for (int i{ 0 }; i < 7; ++i) {
+		for (int i{ 0 }; i < m.BoardSize; ++i) {
 			std::cout << FrogToad::Model::toChar(m.cellAt(i));
 		}
 		std::cout << "\n";
 
-		for (int i{ 0 }; i < 7; ++i) {
+		for (int i{ 0 }; i < m.BoardSize; ++i) {
 			std::cout << (i + 1);
 		}
 		std::cout << "   (1..7 move; R restart)\n";

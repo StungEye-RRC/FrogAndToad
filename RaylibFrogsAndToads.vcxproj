@@ -132,9 +132,6 @@
     <ClCompile Include="raylib_view.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="ansi_view.hpp" />
     <ClInclude Include="console_view.hpp" />
     <ClInclude Include="raylib_controller.hpp" />
@@ -142,6 +139,9 @@
     <ClInclude Include="interfaces.hpp" />
     <ClInclude Include="model.hpp" />
     <ClInclude Include="raylib_view.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

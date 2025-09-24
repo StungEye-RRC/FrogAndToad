@@ -2,7 +2,7 @@
 #include <string>
 #include "model.hpp"
 
-#define RAYLIB_BUILD 
+// #define RAYLIB_BUILD 
 
 #ifdef RAYLIB_BUILD
 	#include "raylib.h"
@@ -19,7 +19,7 @@
 #ifndef RAYLIB_BUILD
 int main() {
     FrogToad::Model model;
-    FrogToad::ConsoleView view;
+    FrogToad::AnsiView view;
     FrogToad::ConsoleController ctrl;
 
     std::cout << "Toads & Frogs - Console\n\n";

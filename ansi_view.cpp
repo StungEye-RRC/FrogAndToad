@@ -14,15 +14,14 @@ namespace FrogToad {
 	}
 
 	void AnsiView::draw(const FrogToad::Model& m) {
-		// Move cursor to top-left; redraw the whole panel in-place
+		// Move cursor to top-left
 		std::cout << "\x1b[H";
 
-		// Title / instructions
 		std::cout << bold() << "Toads & Frogs (7-square)\n" << reset();
 		std::cout << dim() << "1..7 = move index   R = restart\n\n" << reset();
 
-		// Board row (colored pieces)
-		for (int i = 0; i < 7; ++i) {
+		// Board row 
+		for (int i = 0; i < m.BoardSize; ++i) {
 			const auto c = m.cellAt(i);
 			const auto piece{ FrogToad::Model::toChar(c) };
 			if (c == FrogToad::Model::Cell::L) {
@@ -41,10 +40,10 @@ namespace FrogToad {
 
 		// Index row (1..7), dimmed
 		std::cout << dim();
-		for (int i = 1; i <= 7; ++i) {
-			std::cout << i << (i < 7 ? ' ' : '\n');
+		for (int i = 1; i <= m.BoardSize; ++i) {
+			std::cout << i << ' ';
 		}
-		std::cout << reset() << '\n';
+		std::cout << reset() << "\n\n";
 
 		// Status line
 		if (m.isSolved()) {
