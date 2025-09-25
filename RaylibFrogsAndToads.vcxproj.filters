@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RaylibFrogsAndToads.cpp">
+    <ClCompile Include="frog_and_toads.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="model.cpp">
@@ -38,7 +38,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="model.hpp">
+    <ClInclude Include="board_model.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="interfaces.hpp">

@@ -13,7 +13,7 @@ namespace FrogToad {
 		std::cout.flush();
 	}
 
-	void AnsiView::draw(const Model& m) {
+	void AnsiView::draw(const BoardModel& m) {
 		// Move cursor to top-left
 		std::cout << "\x1b[H";
 
@@ -23,11 +23,11 @@ namespace FrogToad {
 		// Board row 
 		for (int i = 0; i < m.BoardSize; ++i) {
 			const auto c = m.cellAt(i);
-			const auto piece{ Model::toChar(c) };
-			if (c == Model::Cell::L) {
+			const auto piece{ BoardModel::toChar(c) };
+			if (c == BoardModel::Cell::Frog) {
 				std::cout << blue();
 			}
-			else if (c == Model::Cell::R) {
+			else if (c == BoardModel::Cell::Toad) {
 				std::cout << red();
 			}
 			else {

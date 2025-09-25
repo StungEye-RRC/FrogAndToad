@@ -3,6 +3,6 @@
 
 namespace FrogToad {
     struct ConsoleView : IView {
-        void draw(const Model& m) override;
+        void draw(const BoardModel& m) override;
     };
 }

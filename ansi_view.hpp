@@ -6,7 +6,7 @@ namespace FrogToad {
 	AnsiView();
 	~AnsiView();
 
-	void draw(const Model& m) override;
+	void draw(const BoardModel& m) override;
 
     private:
         // Simple ANSI helpers

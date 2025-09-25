@@ -3,6 +3,6 @@
 
 namespace FrogToad {
     struct RaylibController : IController {
-        void step(Model& m) override;
+        void step(BoardModel& m) override;
     };
 }

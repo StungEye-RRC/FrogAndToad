@@ -128,7 +128,7 @@
     <ClCompile Include="raylib_controller.cpp" />
     <ClCompile Include="console_controller.cpp" />
     <ClCompile Include="model.cpp" />
-    <ClCompile Include="RaylibFrogsAndToads.cpp" />
+    <ClCompile Include="frog_and_toads.cpp" />
     <ClCompile Include="raylib_view.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -137,7 +137,7 @@
     <ClInclude Include="raylib_controller.hpp" />
     <ClInclude Include="console_controller.hpp" />
     <ClInclude Include="interfaces.hpp" />
-    <ClInclude Include="model.hpp" />
+    <ClInclude Include="board_model.hpp" />
     <ClInclude Include="raylib_view.hpp" />
   </ItemGroup>
   <ItemGroup>

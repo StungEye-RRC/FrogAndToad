@@ -1,6 +1,6 @@
 #include <array>
 #include <string>
-#include "model.hpp"
+#include "board_model.hpp"
 
 // #define RAYLIB_BUILD 
 
@@ -17,8 +17,8 @@
 
 #ifndef RAYLIB_BUILD
 int main() {
-    FrogToad::Model model;
-    FrogToad::AnsiView view;
+    FrogToad::BoardModel model;
+    FrogToad::ConsoleView view;
     FrogToad::ConsoleController ctrl;
 
     std::cout << "Toads & Frogs - Console\n\n";
@@ -33,7 +33,7 @@ int main() {
 }
 #else
 int main() {
-    FrogToad::Model model;
+    FrogToad::BoardModel model;
     FrogToad::RaylibView view;
     FrogToad::RaylibController ctrl;
 

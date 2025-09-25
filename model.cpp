@@ -1,29 +1,29 @@
-#include "model.hpp"
+#include "board_model.hpp"
 
 namespace FrogToad {
 
     // --- Public API ---
 
-    void Model::reset() {
+    void BoardModel::reset() {
         board = StartingBoard;
         isGameSolved = false;
     }
 
-    bool Model::isSolved() const { 
+    bool BoardModel::isSolved() const { 
         return isGameSolved; 
     }
 
-    Model::Cell Model::cellAt(int i) const {
-        return isIndexValid(i) ? board[i] : Cell::E;
+    BoardModel::Cell BoardModel::cellAt(int i) const {
+        return isIndexValid(i) ? board[i] : Cell::Empty;
     }
 
-    char Model::toChar(Cell c) {
+    char BoardModel::toChar(Cell c) {
         // Converts Cell enums to Text using nested ternary
-        // E => '.', L => 'T', R => 'F'
-        return c == Cell::E ? '.' : (c == Cell::L ? 'T' : 'F');
+        // Empty => '.', Frog => 'F', Toad => 'T'
+        return c == Cell::Empty ? '.' : (c == Cell::Frog ? 'F' : 'T');
     }
 
-    bool Model::tryMove(int i) {
+    bool BoardModel::tryMove(int i) {
         if (!isIndexValid(i) || isCellEmpty(i)) return false;
 
         Cell c{ board[i] };
@@ -40,28 +40,28 @@ namespace FrogToad {
             return false;
         }
 
-        board[i] = Cell::E;
+        board[i] = Cell::Empty;
         evaluateBoard();
         return true;
     }
 
     // --- Private Static Constexpr Helpers ---
 
-    constexpr bool Model::isIndexValid(int k) { 
+    constexpr bool BoardModel::isIndexValid(int k) { 
         return k >= 0 && k < BoardSize; 
     }
     
-    constexpr int Model::moveDirection(Cell c) { 
-        return (c == Cell::L) ? +1 : -1; 
+    constexpr int BoardModel::moveDirection(Cell c) { 
+        return (c == Cell::Frog) ? +1 : -1; 
     }
 
     // --- Private Instance Helpers ---
 
-    bool Model::isCellEmpty(int k) const { 
-        return board[k] == Cell::E;
+    bool BoardModel::isCellEmpty(int k) const { 
+        return board[k] == Cell::Empty;
     }
 
-    void Model::evaluateBoard() {
+    void BoardModel::evaluateBoard() {
         isGameSolved = (board == GoalBoard);
     }
 
