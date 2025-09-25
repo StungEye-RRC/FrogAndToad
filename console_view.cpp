@@ -2,9 +2,9 @@
 #include <iostream>
 
 namespace FrogToad {
-	void ConsoleView::draw(const FrogToad::Model& m) {
+	void ConsoleView::draw(const Model& m) {
 		for (int i{ 0 }; i < m.BoardSize; ++i) {
-			std::cout << FrogToad::Model::toChar(m.cellAt(i));
+			std::cout << Model::toChar(m.cellAt(i));
 		}
 		std::cout << "\n";
 

@@ -2,7 +2,7 @@
 #include "interfaces.hpp"
 
 namespace FrogToad {
-	struct ConsoleController : FrogToad::IController {
-		void step(FrogToad::Model& m) override; 
+	struct ConsoleController : IController {
+		void step(Model& m) override; 
 	};
 }

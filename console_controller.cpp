@@ -2,7 +2,7 @@
 #include <conio.h>
 
 namespace FrogToad{
-	void ConsoleController::step(FrogToad::Model& m) {
+	void ConsoleController::step(Model& m) {
 		int ch{ _getch() };
 		applyCommand(m, ch);
 	}

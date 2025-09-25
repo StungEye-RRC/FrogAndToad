@@ -2,11 +2,11 @@
 #include "interfaces.hpp"
 
 namespace FrogToad {
-    struct AnsiView : FrogToad::IView {
+    struct AnsiView : IView {
 	AnsiView();
 	~AnsiView();
 
-	void draw(const FrogToad::Model& m) override;
+	void draw(const Model& m) override;
 
     private:
         // Simple ANSI helpers

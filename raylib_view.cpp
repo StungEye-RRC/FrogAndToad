@@ -1,7 +1,7 @@
 #include "raylib_view.hpp"
 
 namespace FrogToad {
-	void RaylibView::draw(const FrogToad::Model& m) {
+	void RaylibView::draw(const Model& m) {
 		ClearBackground(RAYWHITE);
 	}
 

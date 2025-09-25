@@ -13,12 +13,12 @@ namespace FrogToad {
 		std::cout.flush();
 	}
 
-	void AnsiView::draw(const FrogToad::Model& m) {
+	void AnsiView::draw(const Model& m) {
 		// Move cursor to top-left
 		std::cout << "\x1b[H";
 
 		std::cout << bold() << "Toads & Frogs (7-square)\n" << reset();
-		std::cout << dim() << "1..7 = move index   R = restart\n\n" << reset();
+		std::cout << dim() << "1.." << m.BoardSize << " = move index   R = restart\n\n" << reset();
 
 		// Board row 
 		for (int i = 0; i < m.BoardSize; ++i) {
