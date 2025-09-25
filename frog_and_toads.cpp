@@ -25,7 +25,7 @@ int main() {
 
     while (true) {
         view.draw(model);
-        controller.step(model);
+        controller.nextMove(model);
         std::cout << "\n";
     }
 
@@ -41,7 +41,7 @@ int main() {
     SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
-        ctrl.step(model);
+        ctrl.nextMove(model);
         BeginDrawing();
         view.draw(model);
         EndDrawing();

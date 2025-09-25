@@ -2,7 +2,7 @@
 #include "raylib.h"
 
 namespace FrogToad {
-	void RaylibController::step(BoardModel& m) {
+	void RaylibController::nextMove(BoardModel& m) {
 
 	}
 }

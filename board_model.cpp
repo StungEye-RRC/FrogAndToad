@@ -18,9 +18,12 @@ namespace FrogToad {
     }
 
     char BoardModel::toChar(Cell c) {
-        // Converts Cell enums to Text using nested ternary
-        // Empty => '.', Frog => 'F', Toad => 'T'
-        return c == Cell::Empty ? '.' : (c == Cell::Frog ? 'F' : 'T');
+        switch (c) {
+            case Cell::Empty: return '.';
+            case Cell::Frog: return 'F';
+            case Cell::Toad: return 'T';
+            default: return 'X'; // Invalid! There are only three states to the enum.
+        }
     }
 
     bool BoardModel::tryMove(int i) {
@@ -47,8 +50,8 @@ namespace FrogToad {
 
     // --- Private Static Constexpr Helpers ---
 
-    constexpr bool BoardModel::isIndexValid(int k) { 
-        return k >= 0 && k < BoardSize; 
+    constexpr bool BoardModel::isIndexValid(int i) { 
+        return i >= 0 && i < BoardSize; 
     }
     
     constexpr int BoardModel::moveDirection(Cell c) { 
@@ -57,8 +60,8 @@ namespace FrogToad {
 
     // --- Private Instance Helpers ---
 
-    bool BoardModel::isCellEmpty(int k) const { 
-        return board[k] == Cell::Empty;
+    bool BoardModel::isCellEmpty(int i) const { 
+        return board[i] == Cell::Empty;
     }
 
     void BoardModel::evaluateBoard() {

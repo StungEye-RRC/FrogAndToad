@@ -18,7 +18,7 @@
     <ClCompile Include="frog_and_toads.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="model.cpp">
+    <ClCompile Include="board_model.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="console_controller.cpp">

@@ -3,6 +3,6 @@
 
 namespace FrogToad {
 	struct ConsoleController : IController {
-		void step(BoardModel& m) override; 
+		void nextMove(BoardModel& m) override; 
 	};
 }

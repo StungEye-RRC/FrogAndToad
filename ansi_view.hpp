@@ -3,10 +3,19 @@
 #include <string>
 
 namespace FrogToad {
+    /**
+     * @brief ANSI terminal implementation of FrogToad::IView.
+     *
+     * Renders the board using ANSI escape sequences on a text console.
+     */
     struct AnsiView : IView {
 	AnsiView();
 	~AnsiView();
 
+    /**
+     * @brief Draw the current board state to the terminal.
+     * @param m Immutable board model to render.
+     */
 	void draw(const BoardModel& m) override;
 
     private:

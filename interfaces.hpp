@@ -1,32 +1,61 @@
-#pragma once
+﻿#pragma once
 #include "board_model.hpp"
 
 namespace FrogToad {
-    // ########## View "Interface" ##########
-    // Abstract class for our game views.
-    // Views must inherit from this class and implement the draw method.
+    /**
+     * @brief Abstract view interface for rendering our game.
+     *
+     * Views must implement a single draw operation that receives a read-only
+     * snapshot of the current board state to render.
+     */
     struct IView {
         virtual ~IView() = default;
+
+        /**
+         * @brief Render the provided board state.
+         *
+         * Accepts a const reference to the current @c BoardModel. The
+         * parameter is intentionally unnamed; implementers should fetch all
+         * data needed to draw without mutating the model.
+         */
         virtual void draw(const BoardModel&) = 0;
     };
 
-    // ########## Controller "Interface" + Helper ##########
-    // Abstract class for our game controllers.
-    // Controllers must inherit from this class and implement the setup method.
-    // The step method should in term call out to the applyCommand helper method
-    // to communicate with the model.
+    /**
+     * @brief Abstract controller interface plus a model helper.
+     *
+     * Controllers encapsulate player or AI input and advance the model by
+     * issuing moves. 
+     */
     struct IController {
         virtual ~IController() = default;
-        virtual void step(BoardModel&) = 0;
 
+        /**
+         * @brief Advance the game by producing the next move.
+         *
+         * Implementations should read input (human or AI) and apply it to the
+         * model—usually by delegating to applyCommand.
+         */
+        virtual void nextMove(BoardModel&) = 0;
+
+        /**
+         * @brief Translate an ASCII character into a model command.
+         *
+         * @param m Reference to the model.
+         * @param key Input character representing a command (e.g., '1'..'9', 'r'/'R').
+         * @return True if the command was recognized and applied; otherwise false.
+         *
+         * @details
+         * - 'r' or 'R' resets the model via BoardModel::reset().
+         * - Digit characters are mapped to zero-based indices by subtracting the
+         *   character '1' from the pressed key (e.g., '1'→0, '2'→1, '3'→2),
+         *   and passed to BoardModel::tryMove().
+         *
+         * @note The digit-to-index conversion relies on ASCII ordering:
+         *       '1' - '1' = 0, '2' - '1' = 1, '3' - '1' = 2, etc.
+         */
         static bool applyCommand(BoardModel& m, char key) {
             if (key == 'r' || key == 'R') { m.reset(); return true; }
-            // Subtracting '1' from the key to convert from the ASCII char 
-            // value to an integer. For example:
-            // '1' - '1' = 0
-            // '2' - '1' = 1
-            // '3' - '1' = 2 
-            // Etc...
             return m.tryMove(key - '1');
         }
     };
