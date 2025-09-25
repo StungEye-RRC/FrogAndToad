@@ -1,5 +1,6 @@
 #pragma once
 #include "interfaces.hpp"
+#include <string>
 
 namespace FrogToad {
     struct AnsiView : IView {
@@ -9,13 +10,20 @@ namespace FrogToad {
 	void draw(const BoardModel& m) override;
 
     private:
-        // Simple ANSI helpers
-        static const char* reset() { return "\x1b[0m"; }
-        static const char* bold() { return "\x1b[1m"; }
-        static const char* dim() { return "\x1b[37m"; }
-        static const char* red() { return "\x1b[38;5;196m"; }  // bright red
-        static const char* blue() { return "\x1b[38;5;33m"; }   // deep blue
-        static const char* green() { return "\x1b[38;5;34m"; }   // status
+        // ANSI Escape Code Helpers
+        static const std::string resetStyles() { return "\x1b[0m"; } 
+        static const std::string clearScreen() { return "\x1b[2J"; };
+        static const std::string hideCursor()  { return "\x1b[?25l"; }
+        static const std::string showCursor()  { return "\x1b[?25h"; }
+        static const std::string eraseAfter()  { return "\x1b[0J"; }
+        static const std::string cursorHome()  { return "\x1b[H";  }
+        static const std::string white()       { return "\x1b[1m"; }
+        static const std::string grey()        { return "\x1b[37m"; }
+        static const std::string red()         { return "\x1b[38;5;196m"; }
+        static const std::string blue()        { return "\x1b[38;5;33m"; }
+        static const std::string green()       { return "\x1b[38;5;34m"; }
+        static const std::string bell()        { return "\a"; }
+
     };
 }
 

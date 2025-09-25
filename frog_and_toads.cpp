@@ -18,14 +18,14 @@
 #ifndef RAYLIB_BUILD
 int main() {
     FrogToad::BoardModel model;
-    FrogToad::ConsoleView view;
-    FrogToad::ConsoleController ctrl;
+    FrogToad::AnsiView view;
+    FrogToad::ConsoleController controller;
 
     std::cout << "Toads & Frogs - Console\n\n";
 
     while (true) {
         view.draw(model);
-        ctrl.step(model);
+        controller.step(model);
         std::cout << "\n";
     }
 
