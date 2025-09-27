@@ -2,7 +2,7 @@
 #include <string>
 #include "board_model.hpp"
 
-#define RAYLIB_BUILD 
+// #define RAYLIB_BUILD 
 
 #ifdef RAYLIB_BUILD
 	#include "raylib.h"
