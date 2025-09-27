@@ -34,7 +34,7 @@ namespace FrogToad {
         static char toChar(Cell c);
 
         /**
-         * @brief Attempt to move the piece at index @p i.
+         * @brief Attempt to move the piece at index i.
          *
          * Applies a slide or jump is a space is available (direction depends
          * on the piece type). Updates internal state on success.
