@@ -2,7 +2,8 @@
 #include "interfaces.hpp"
 
 namespace FrogToad {
-	struct ConsoleController : IController {
+	class ConsoleController : IController {
+	public:
 		void nextMove(BoardModel& m) override; 
 	};
 }

@@ -3,7 +3,8 @@
 #include "raylib.h"
 
 namespace FrogToad {
-    struct RaylibView : IView {
+    class RaylibView : IView {
+    public:
         void draw(const BoardModel& m) override;
 
         int windowW() const;

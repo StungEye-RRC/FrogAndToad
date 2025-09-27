@@ -2,7 +2,8 @@
 #include "interfaces.hpp"
 
 namespace FrogToad {
-    struct RaylibController : IController {
+    class RaylibController : IController {
+    public:
         void nextMove(BoardModel& m) override;
     };
 }

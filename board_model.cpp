@@ -1,7 +1,6 @@
 #include "board_model.hpp"
 
 namespace FrogToad {
-
     // --- Public API ---
 
     void BoardModel::reset() {

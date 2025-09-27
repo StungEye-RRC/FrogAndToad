@@ -5,7 +5,8 @@ namespace FrogToad {
     /**
      * @brief Game model holding board state, move logic, and solution evaluation.
      */
-    struct BoardModel {
+    class BoardModel {
+    public:
         static constexpr int BoardSize = 7;
 
         enum class Cell { Empty, Frog, Toad }; // Empty, Frog moves right, Toad moves left

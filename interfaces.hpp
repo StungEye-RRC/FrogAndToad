@@ -8,7 +8,8 @@ namespace FrogToad {
      * Views must implement a single draw operation that receives a read-only
      * snapshot of the current board state to render.
      */
-    struct IView {
+    class IView {
+    public:
         virtual ~IView() = default;
 
         /**
@@ -27,7 +28,8 @@ namespace FrogToad {
      * Controllers encapsulate player or AI input and advance the model by
      * issuing moves. 
      */
-    struct IController {
+    class IController {
+    public:
         virtual ~IController() = default;
 
         /**

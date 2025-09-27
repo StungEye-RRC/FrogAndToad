@@ -8,17 +8,20 @@ namespace FrogToad {
      *
      * Renders the board using ANSI escape sequences on a text console.
      */
-    struct AnsiView : IView {
-	AnsiView();
-	~AnsiView();
+    class AnsiView : IView {
+    public:
 
-    /**
-     * @brief Draw the current board state to the terminal.
-     * @param m Immutable board model to render.
-     */
-	void draw(const BoardModel& m) override;
+	    AnsiView();
+	    ~AnsiView();
+
+        /**
+        * @brief Draw the current board state to the terminal.
+        * @param m Immutable board model to render.
+        */
+	    void draw(const BoardModel& m) override;
 
     private:
+    
         // ANSI Escape Code Helpers
         static const std::string resetStyles() { return "\x1b[0m"; } 
         static const std::string clearScreen() { return "\x1b[2J"; };
@@ -32,7 +35,6 @@ namespace FrogToad {
         static const std::string blue()        { return "\x1b[38;5;33m"; }
         static const std::string green()       { return "\x1b[38;5;34m"; }
         static const std::string bell()        { return "\a"; }
-
     };
 }
 

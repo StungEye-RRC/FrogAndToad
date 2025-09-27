@@ -5,7 +5,8 @@ namespace FrogToad {
     /**
      * @brief Plain-text console implementation of FrogToad::IView.
      */
-    struct ConsoleView : IView {
+    class ConsoleView : IView {
+    public:
         /**
          * @brief Render the current board to stdout.
          * @param m Immutable board model to display.
